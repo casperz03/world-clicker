@@ -1,6 +1,8 @@
 /* index.css działa jako reset(?) | sprawdzić czy mogę jakoś import zmiennych stąd do App.css | wyszukać na yt "How to name css variables" & "explanation for colors css hsl oklch itp."*/
 /* DZISIAJ ZROBIĆ CAŁY CSS!!! i RWD oczywiście + zabezpieczyć duże liczby */
 
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
 *,
 *::before,
 *::after {
@@ -9,23 +11,28 @@
 	padding: 0;
 }
 
+/* Zmienić nazwy zmiennych, żeby były sensowne i może typ systemu */
 :root {
 	--color: hsl(255, 7%, 11%);
-	--font: hsl(0, 0%, 37%);
+	--font-c: hsl(0, 0%, 37%);
 	--white: hsl(0, 0%, 92%);
 	--red: hsl(0, 78%, 55%);
-	--font-family: Arial;
+	--font: "Roboto", sans-serif;
 }
 
 html {
 	font-size: 62.5%;
 }
 
-body {
+body,
+#root {
 	display: flex;
+	justify-content: center;
+	align-items: center;
 	width: 100%;
 	height: 100vh;
+	font-family: var(--font);
+	font-size: 1rem;
 	background-color: var(--color);
 	color: var(--white);
-	height: 100%;
 }
