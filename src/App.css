@@ -10,13 +10,13 @@
 .total-clicks {
 	text-align: center;
 
-	.counter {
+	& .counter {
 		font-size: 4rem;
 		font-weight: 700;
 		color: hsl(from var(--clr-txt-main) h s calc(l + 60));
 	}
 
-	.text {
+	& .text {
 		margin-top: 0.5rem;
 		font-size: 2rem;
 		font-weight: 600;
@@ -61,7 +61,7 @@ footer {
 	text-align: center;
 
 	& p {
-		color: var(--clr-footer);
+		color: var(--clr-txt-footer);
 	}
 }
 

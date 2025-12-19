@@ -17,8 +17,8 @@ html {
 	--fnt-main: "Roboto", sans-serif;
 	--clr-background: hsl(255, 7%, 11%);
 	--clr-txt-main: hsl(0, 0%, 30%);
+	--clr-txt-footer: hsl(231.3, 20.12%, 23.73%);
 	--clr-button: hsl(0, 78%, 55%);
-	--clr-footer: hsl(231.3, 20.12%, 23.73%);
 }
 
 html {

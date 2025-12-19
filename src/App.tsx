@@ -1,8 +1,15 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 
 function App() {
-	const [count, setCount] = useState<number>(0);
+	const [count, setCount] = useState<number>(() => {
+		const saved = localStorage.getItem("clicked");
+		return saved ? Number(saved) : 0;
+	});
+
+	useEffect(() => {
+		localStorage.setItem("clicked", String(count));
+	}, [count]);
 
 	return (
 		<div className="content">
