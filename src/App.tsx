@@ -1,6 +1,14 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 
+// const clicksArr: string[] = [];
+// let cps = 0;
+
+// setInterval(() => {
+// 	console.log(`CPS: ${cps}`);
+// 	cps = 0;
+// }, 1000);
+
 const App = () => {
 	// TOTAL
 	const [totalCount, setTotalCount] = useState<number>(() => {
@@ -8,22 +16,9 @@ const App = () => {
 		return savedTotalClicks ? Number(savedTotalClicks) : 0;
 	});
 
-	const clicksArr: string[] = [];
-
 	useEffect(() => {
 		localStorage.setItem("total_clicks", String(totalCount));
-		clicksArr.push("click");
 	}, [totalCount]);
-
-	// let cps = 0;
-	// setInterval(() => {
-	// 	console.log(`CPS: ${cps}`);
-	// 	cps = 0;
-	// }, 1000);
-
-	// if (cps > 20) {
-	// 	console.warn("Warning!");
-	// }
 
 	// SESSION - reset on a new day
 	const [countOnSession, setCountOnSession] = useState<number>(() => {
@@ -48,6 +43,9 @@ const App = () => {
 	const handleActionsOnClick = () => {
 		setTotalCount(totalCount + 1);
 		setCountOnSession(countOnSession + 1);
+		// clicksArr.push("click");
+		// console.log(clicksArr);
+		// cps += 1;
 	};
 
 	return (
@@ -55,7 +53,7 @@ const App = () => {
 			<div className="total-clicks">
 				<p className="counter">{String(totalCount)}</p>
 				<p className="text">
-					<span>{}</span> clicks per second
+					<span>{true ? "0" : "more clicks"}</span> clicks per second
 				</p>
 			</div>
 
@@ -69,10 +67,7 @@ const App = () => {
 
 			<footer>
 				<p>
-					&copy; {new Date().getFullYear()} World Clicker 🌍 Inspired by{" "}
-					<a target="_blank" href="https://scratch.mit.edu/projects/377874630/">
-						Planet Clicker by Coltroc
-					</a>
+					&copy; {new Date().getFullYear()} World Clicker 🌍 Inspired by Cookie Clickers
 				</p>
 			</footer>
 		</div>
